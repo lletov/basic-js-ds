@@ -20,9 +20,14 @@ class Queue {
     // remove line with error and write your code here
   }
 
-  enqueue(/* value */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  enqueue(data) {
+    this.data = data;
+    this.previous = null;
+    var node = new Node(data);
+    node.previous = this.top;
+    this.top = node;
+    this.size += 1;
+    return this.top;
   }
 
   dequeue() {
